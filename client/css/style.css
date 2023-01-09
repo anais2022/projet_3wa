@@ -1,0 +1,488 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family:'Dosis', sans-serif;
+}
+
+*:focus{
+    outline: none;
+}
+:root{
+    --alert-color: #c99e03;
+    --basic-color:#fff;
+}
+
+/********* MISE EN FORME COMMUNE À TOUTES LES PAGES : MSG ALERT **********/
+
+.logo{
+    width: 4rem;
+    position: fixed;
+    top: 2.5rem;
+    left: 2.5rem;
+    z-index:1;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top:6rem;
+    left: 2.5rem;
+    z-index: 1;
+    margin-top: 0.6rem;
+    /*background: rgba(255, 255, 255, 0.3);*/
+    border-radius: 0.2rem;
+}
+
+ul li a{
+    text-decoration: none;
+    color: var(--basic-color);
+    display: block;
+    padding: 0.3rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+a.menu:hover{
+    color: #000;
+    font-size: 0.9rem;
+}
+
+.msg-alerte{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 150px;
+    max-width: 90%;
+    width: auto;
+    padding: 0.3rem;
+    text-transform: capitalize;
+    background: #e1c45d;
+    border-top: 0.5rem solid var(--alert-color);
+    border-bottom-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.1rem;
+    border-top-left-radius: 0.1rem;
+    color: var(--basic-color);
+    text-align: center;
+    transition: 1s;
+}
+
+
+/********* MISE EN FORME PAGE AUTHENTIFICATION : FORMULAIRES ET ACCUEIL **********/
+.auth-commun{
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.only-form{
+    flex-direction: column;
+}
+
+.bg-img{
+    background-image: url('/images/bg_identification.jpeg');
+    background-size: cover;
+    background-position: center;
+    
+    
+}
+
+.formulaire{
+    width: 30rem;
+    height : auto;
+    color: var(--basic-color);
+}
+.entete{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    opacity:0;
+
+}
+input, .btn-valider{
+    width: 80%;
+    height: 2rem;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 0.3rem;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: var(--basic-color);
+    padding: 0.2rem;
+    transition: .5s;
+    opacity:0;
+}
+input::placeholder{
+    color: var(--basic-color);
+}
+textarea::placeholder{
+    color: var(--basic-color);
+}
+input:focus, .btn-valider:hover{
+    background-color: var(--basic-color);
+    color: #808080;
+}
+input:focus::placeholder{
+    color: #808080;
+}
+.btn-valider{
+    width: auto;
+    padding: 0 1.3rem;
+    cursor: pointer;
+    margin: 1.5rem auto 0;
+    opacity:0;
+}
+
+.lien-inscription{
+    opacity:0;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    display:block;
+    margin: 1rem auto;
+}
+.lien-inscription:hover{
+    color: var(--basic-color);
+}
+
+
+/********* MISE EN FORME PAGE DE BIENVENUE **********/
+
+.contour{
+    position: relative;
+    width: 90%;
+    height : 85vh;
+    border: 0.3rem solid var(--basic-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout{
+    position:absolute;
+    top: 1rem;
+    right: 0;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--basic-color);
+    background: none;
+    text-decoration: underline;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    /* opacity:0; */
+}
+.msg-accueil{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 4rem;
+    color: var(--basic-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    /* opacity:0; */
+}
+
+.entrer{
+    text-transform: capitalize;
+    text-decoration: none;
+    color: var(--basic-color);
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+.entrer:hover{
+    background: rgba(227,227,227,0.5);
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.7rem;
+}
+
+/****** Crédit photo********/
+.credit-photo a{
+    text-decoration: none;
+    color: rgba(227, 227, 227, 0.7);
+}
+.credit-photo{
+    color: rgba(227, 227, 227, 0.7);
+} 
+
+/****** mise en forme footer********/
+footer{
+    position: absolute;
+    bottom: 0rem;
+    left:0rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    color: rgba(227, 227, 227, 0.7);
+    padding: 1rem 0;
+    text-align: center;
+    z-index: 1;
+    padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 1023px) {
+    .contour{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+    }
+
+
+    .msg-accueil{
+        font-size: 3rem;
+        text-align: center;
+        line-height: 3rem;
+    }
+    
+    .entrer{
+        font-size: 1.4rem;
+        margin-top: 3rem;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .contour{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+    }
+
+
+    .msg-accueil{
+        font-size: 3rem;
+        text-align: center;
+    }
+    
+    .entrer{
+        font-size: 1.4rem;
+    }
+
+}
+
+
+/********* MISE EN FORME PAGE D'AFFICHAGE DES EVENEMENTS **********/
+.edit-commun{
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+}
+
+.bg-img{
+    background-image: url('/images/bg_identification.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.enteteEdit{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    padding-top: 1rem;
+    color: var(--basic-color);
+}
+.intro{
+    text-align: center;
+    margin-bottom: 0.7rem;
+}
+
+.addEvent{
+    margin: 0.5rem auto;
+    width: 30vw;
+    display: inline-block;
+    text-align: center;
+    font-size: 0.5rem;
+    color: var(--basic-color);
+    background-color: var();
+    font-size: 1.2rem;
+}
+
+.ajouter{
+    font-size: 1rem;
+    text-align: center;
+    color: var(--basic-color);
+    padding-left: 2rem;
+}
+
+.flex-container{
+    display: flex;
+    max-width: 75vw;
+    max-height: 80vh;
+    margin: 0 auto;
+    background-color:  rgba(255, 255, 255, 0.3);
+    border-radius: 0.3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+}
+
+.flex-item{
+    width: 290px;
+    height: 290px;
+    background-color: rgba(255, 255, 255, 0.564);
+    margin: 0.7rem;
+    overflow: hidden;
+    flex-shrink: 0;
+    border-radius: 0.2rem;
+    position: relative;
+}
+
+.event-img{
+    width: 100%;
+    height: 100%;
+}
+
+.event-text{
+    width : 290px;
+    max-height: 290px;
+    height: 90px;
+    background-color: rgba(27, 27, 27, 0.7);
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    padding-left: 1rem;
+
+}
+
+.eventsTheme{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 1rem 1rem 0.6rem 1rem;
+    
+}
+
+.eventDetails, .btn-action {
+    font-size: 1.2rem;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.flex-item:hover{
+    cursor: pointer;
+}
+.flex-item:hover .event-text{
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 100%;
+}
+
+.flex-item:hover .eventDetails, .flex-item:hover .btn-action{
+    visibility: visible;
+    opacity:1;
+}
+
+.btn-action{
+    margin-right: 2rem;
+    margin-top: 1rem;
+}
+.btn-action a{
+    margin-right: 2rem;
+    color: #fff;
+}
+
+
+.editForm{
+    background-color : rgba(155, 154, 154, 0.564);
+    width: 50vw;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2rem;
+    border-radius: 0.3rem;
+}
+.titleForm{
+    font-size: 1.5rem;
+    color: var(--basic-color);
+    text-transform: uppercase;
+}
+
+.groupe1, .groupe2, .groupe3{
+    width: 100%;
+
+}
+.groupe4{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.editForm-label{
+    color: var(--basic-color);
+    margin-left: 0.3rem;
+    font-size: 1.3rem;
+    color: var(--basic-color);
+    text-transform: capitalize;
+}
+
+#editForm-theme, #editForm-details{
+    background-color: rgba(255, 255, 255, 0.745);
+    opacity: 1;
+    margin: 0.3rem;
+    width: 90%;
+}
+
+#editForm-theme::placeholder, #editForm-details::placeholder, label.img-upload-btn{
+    font-size: 1rem;
+    color: #585757;
+}
+
+ #editForm-details{
+    display: block;
+    min-height: 20vh;
+    outline: none;
+    border: transparent;
+    border-radius: 0.3rem;
+    padding: 0.2rem;
+
+}
+
+#img-upload{
+    display:hide;
+}
+
+.btn-publier, .btn-publier2, .img-upload-btn{
+    padding: 0 1.3rem;
+    cursor: pointer;
+    height: 2rem;
+    margin: 0.3rem;
+    width: 40%;
+    display: block;
+    border-radius: 0.3rem;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: var(--basic-color);
+    opacity: 1;
+    text-transform: capitalize;
+    font-size: 1.1rem;
+}
+
+a.btn-publier2{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.img-upload-btn{
+    width: 90%;
+    margin-top: 1rem;
+    margin-bottom: -2rem;
+    font-size: 1rem;
+    vertical-align: middle;
+    background-color: rgba(255, 255, 255, 0.745);
+    padding: 0.2rem;
+}

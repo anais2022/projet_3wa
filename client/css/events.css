@@ -1,0 +1,338 @@
+/****** généralités ********/
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'dosis', sans-serif;
+}
+:root{
+    --bg-color: #c99e03;
+    --basic-color: #fff;
+    --main-color: #031c35;
+}
+
+/******mise en forme header ********/
+
+
+/* .logo{
+    width: 3.5rem;
+    border: none;
+    border-radius: none;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    padding: 1rem;
+    z-index: 1;
+}*/
+
+/****** mise en forme éléments du main ********/
+
+/* .container{
+    position: relative;
+    min-width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    background: var(--main-color);
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+} */
+
+/****** mise en forme + animation bouton ajouter********/
+
+/* .btn{
+    width: 100%;
+    margin-top: 5rem;
+} */
+
+
+/* .add-event{
+    display: flex;
+    justify-content: center;
+    color: var(--bg-color);
+    border-radius: 0.5rem;
+    border: none;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    align-items: center;
+    background-color: #fff;
+    font-weight: 600;
+    overflow: hidden;
+    transition: 0.3s;
+    padding: 0.3rem;
+    margin-left: 4.8rem; 
+} */
+
+/* .add-event::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--bg-color);
+    top: -100%;
+    left: 0;
+    /* z-index: 1; */
+    /* transition: 0.3s;
+} */ 
+/* .add-event::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--bg-color);
+    color: #fff;
+    top: -100%;
+    left: 0;
+    /* z-index: 1; */
+    /* transition: 0.3s;
+    transition-delay: 0.2s;
+} */ 
+
+/* .add-event:hover{
+    background: var(--basic-color);
+    border: none;
+    color: var(--basic-color);
+}
+.add-event:hover::before{
+    top:0;
+}
+.add-event:hover::after{
+    top:0;
+} */
+
+
+/****** mise en forme cartes événements ****/
+.edit-commun{
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+}
+
+.bg-img{
+    background-image: url('/images/bg_identification.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.flex-container{
+    display: flex;
+    max-width: 75vw;
+    /* width : 70%; */
+    max-height: 80vh;
+    margin: 1rem auto;
+    background-color:  rgba(255, 255, 255, 0.3);
+    border-radius: 0.3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* align-content: space-around; */
+    overflow: scroll;
+    
+
+}
+
+.flex-item{
+    width: 290px;
+    height: 290px;
+    background-color: rgba(255, 255, 255, 0.564);
+    margin: 0.7rem;
+    overflow: hidden;
+    flex-shrink: 0;
+    border-radius: 0.2rem;
+    position: relative;
+}
+
+.event-img{
+    width: 100%;
+    height: 100%;
+}
+
+.event-text{
+    width : 290px;
+    max-height: 290px;
+    height: 90px;
+    background-color: rgba(27, 27, 27, 0.7);
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    padding-left: 1rem;
+
+}
+
+.eventsTheme{
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 1rem 1rem 0.6rem 1rem;
+    
+}
+
+.eventDetails, .btn-action {
+    font-size: 1.2rem;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.flex-item:hover{
+    cursor: pointer;
+}
+.flex-item:hover .event-text{
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 100%;
+}
+
+.flex-item:hover .eventDetails, .flex-item:hover .btn-action{
+    visibility: visible;
+    opacity:1;
+}
+
+.btn-action{
+    margin-right: 2rem;
+    margin-top: 1rem;
+}
+.btn-action a{
+    margin-right: 2rem;
+    color: #fff;
+}
+
+/*.event-card{
+    background-color:  rgba(255, 255, 255, 0.3);
+    width: 35vw;
+    min-height: 60vh;
+    height: 35vw;
+    margin: 1rem auto 3rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    justify-content: left;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+
+}
+
+
+
+.event-img{
+    max-width: 60%;
+    border-radius: 0.5rem;
+    border: 0.2rem solid #fff;
+    flex-basis: 1;
+    box-shadow: 0.2rem 0.3rem 0.5rem 0 #bcbcbc;
+}
+.event-title{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: 0.5rem auto;
+}
+.event-detail{
+    text-align: justify;
+    padding: 0 0.7rem;
+    font-size: 1.2rem;
+}
+.bouton{
+    text-align: end;
+    color: var(--bg-color);
+    font-size: 1.3rem;
+    margin: 3rem 1rem 1rem;
+}
+.fa-trash-can{
+    padding-left: 1rem;
+}
+
+/****** mise en forme footer********/
+/* footer p{
+    text-align: center;
+    padding: 1rem 0;
+} */
+
+/****** affichage tablette ********/
+
+/* @media screen and (min-width: 768px){
+    .container{
+        display: flex;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
+    .event-card{
+        width: 85%;
+        display: flex;
+        margin: 1rem auto;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        height: auto;
+    }
+
+    .add-event{
+        margin-left: 4.3rem;
+    }
+
+    .bloc-texte{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+    }
+ 
+    .btn{
+        display: block;
+        width: 100%;
+    }
+
+    img{
+        width: 40%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .event-detail{
+        padding: 1rem 3rem 0;
+        font-size: 1.2rem;
+    }
+
+    .bouton{
+        margin: 2rem 1rem;
+    }
+} */
+
+
+
+/****** affichage ordinateur ********/
+
+/* @media screen and (min-width: 1024px) {
+    
+    .event-card{
+        width: 75%;
+        display: flex;
+        margin: 1rem auto;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        height: auto;
+    }
+    
+    .add-event{
+        margin-left: 11.3rem;
+    }
+    
+    img{
+        width: 30%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+} */

@@ -1,0 +1,22 @@
+
+ <%- include('head') %> 
+
+<body>
+    <section class="auth-commun bg-img only-form">
+        <% if (locals.message) { %>
+            <div class="msg-alerte"><%=locals.message%> </div>
+        <% } %>
+        <form method="POST" action="/auth/inscription" onsubmit="return true">
+            <div class="formulaire">
+                <h1 class="entete">inscription</h1>
+                <input type="text" placeholder="pseudo" name="nom" id="nom" autocomplete="off" required>
+                <input type="email" placeholder="email" name="email" id="email" autocomplete="off" required>
+                <input type="password" placeholder="mot de passe" name="password" id="password" autocomplete="off" required>
+                <input type="password" placeholder="confirmer le mot de passe" name="passwordConfirm" id="passwordConfirm" autocomplete="off" required>
+                <button type ="submit" class="btn-valider">s'inscrire</button>
+                <a href="/connexion" class="lien-inscription">Vous avez déjà un compte? Se connecter</a>
+            </div>
+        </form>
+    </section>
+
+    <%- include('footer') %> 

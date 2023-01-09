@@ -1,0 +1,20 @@
+<%- include('head') %>
+
+<%- include('header') %>  
+
+    <main class="auth-commun bg-img">
+        <% if (locals.message) { %>
+            <div class="msg-alerte"><%=locals.message%> </div>
+        <% } %>
+
+        <div class="contour">
+            <a href="/auth/deconnexion"><button class="logout">déconnexion</button></a>
+            <h1 class="msg-accueil">bienvenue</h1>
+            <a class="entrer" href="/edit/all-events">tu peux entrer</a>
+            <!-- <a class="entrer" href="/events"><i class="fa-solid fa-angles-right"></i></a> -->
+        </div>
+    </main>
+
+<%- include('footer') %> 
+
+    

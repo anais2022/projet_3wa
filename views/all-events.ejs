@@ -1,0 +1,33 @@
+<%- include('head') %> 
+<%- include('header') %> 
+    <main class="bg-img edit-commun">    
+        <% if (locals.message) { %>
+            <div class="msg-alerte"><%=locals.message%> </div>
+        <% } %>
+
+        <div class="intro">
+            <h1 class="enteteEdit">Tous nos événements</h1>
+            <a class="addEvent" href="/ajouter"><i class="fa-solid fa-file-circle-plus ajouter"></i>ajouter</a>
+        </div>
+
+        <div class="flex-container">
+            <% if (results.length >0) { %>
+                <% results.forEach(result => { %>
+                        <section class="flex-item">
+                            <img class="event-img" src="<%= result.image%>" alt="image téléchargée"/>
+                            <div class="bloc-texte event-text">
+                                <h2 class="eventsTheme"> <%= result.theme%> </h2>
+                                <p class="eventDetails"> 
+                                    <%= result.details%>
+                                </p>
+                                <div class="btn-action">
+                                    <a href="/edit/all-events/<%= result.id %> "><i class="fa-regular fa-pen-to-square"></i></a>
+                                    <a href="/edit/event-deleted/<%= result.id %>"><i class="fa-regular fa-trash-can"></i></a>
+                                </div>
+                            </div>
+                        </section>     
+                <% }) %>
+            <% } %>
+        </div>
+    </main>
+<%- include('footer') %> 

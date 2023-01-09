@@ -1,0 +1,30 @@
+<%- include('head') %> 
+<%- include('header') %> 
+    <main class="bg-img auth-commun">
+        <% if (locals.message) { %>
+            <div class="msg-alerte"><%=locals.message%> </div>
+        <% } %>
+
+        <form class="editForm" action="/edit/ajouter" method="POST" enctype="multipart/form-data">
+            <h1 class="titleForm"> ajoutez un événement </h1> 
+            <div class="groupe1">
+                <label class = "editForm-label"for="titre">thématique</label>
+                <input name="titre" id="editForm-theme" placeholder="le thème de la réunion sera..."></input>
+            </div>
+            <div class="groupe2">
+                <label class = "editForm-label" for="concept">détails</label>
+                <textarea name="concept" id="editForm-details" placeholder="préciser le concept de la rencontre, la date, le lieu, les invités, etc..."></textarea>
+            </div>
+            <div class="groupe3">
+                <label for="img-upload" class="img-upload-btn editForm-label">télécharger un visuel</label>
+                <input type="file" accept="image/*" id="img-upload" name="visuel"/>
+            </div>
+            <div class=" groupe4">
+                <button type="submit" class="btn-publier">enregistrer</button>
+                <a href="/edit/all-events" class="btn-publier2">annuler</a>
+            </div>
+        </form>
+
+    </main>
+
+<%- include('footer') %> 
